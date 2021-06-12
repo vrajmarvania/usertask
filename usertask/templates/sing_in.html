@@ -167,11 +167,11 @@ a {
         <form class="card-form" method="POST" action=""> {% csrf_token %}
             <label for="UserEmail">UserEmail</label>
             <div class="card-input-container UserEmail">
-                <input type="text" placeholder="Enter your UserEmail" id="Email" name="Email">
+                <input type="text" placeholder="Enter your UserEmail" id="Email" name="Email" required>
             </div>
             <label for="password">Password</label>
             <div class="card-input-container password">
-                <input type="password" placeholder="Enter your password" id="password" name="password">
+                <input type="password" placeholder="Enter your password" id="password" name="password" required>
             </div>
             <button class="card-button">Sign In</button>
             <small class="card-forgot-password">New User ? <a href="{% url 'sing_up' %}">SignUp</a></small>

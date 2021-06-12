@@ -93,7 +93,7 @@ th {
                 {% for i in data %}
 
                 <tr data-id="i">
-                    <td data-field="name">{{i}}</td>
+                    <td data-field="name">{{i.username}}</td>
                     <td data-field="birthday">{{i.email}}</td>
                     <td data-field="age">{{i.address.Address}}</td>
                     <td>
@@ -117,20 +117,20 @@ th {
                                             <label for="UserEmail">Username</label>
                                             <div class="card-input-container UserEmail">
                                                 <input type="text"  placeholder="Enter your Username"
-                                                       id="Username" name="Username">
+                                                       id="Username" name="Username" required>
                                             </div>
                                             <label for="UserEmail">UserEmail</label>
                                             <div class="card-input-container UserEmail">
                                                 <input type="text"
                                                        placeholder="Enter your UserEmail" id="UserEmail"
-                                                       name="UserEmail">
+                                                       name="UserEmail" required>
                                             </div>
 
 
                                             <label for="password">Address</label>
                                             <div class="card-input-container Address">
                                                 <input type="text"
-                                                       placeholder="Enter your Address" id="Address" name="Address">
+                                                       placeholder="Enter your Address" id="Address" name="Address" required>
                                             </div>
 
 

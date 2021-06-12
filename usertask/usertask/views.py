@@ -101,7 +101,7 @@ def sing_up(request):
         data = Address(user=user, Address=Add)
         data.save()
         sum = {'error': "data is submited"}
-        return render(request, 'sing_in.html', sum)
+        return render(request, 'sing_up.html', sum)
 
     sum = {}
     return render(request, 'sing_up.html', sum)
@@ -138,10 +138,13 @@ def edit(request, id):
         UserEmail = request.POST.get('UserEmail')
         Add = request.POST.get('Address')
         print(id)
+
         u = User.objects.get(id=int(id))
         u.address.Address = Add
+        u.username=un
         u.email = UserEmail
         u.save()
+
 
         return redirect("index")
 

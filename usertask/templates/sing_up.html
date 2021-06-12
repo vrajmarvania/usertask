@@ -169,24 +169,24 @@ a {
                 <form class="card-form" action="sing_up" method="POST">{% csrf_token %}
                     <label for="UserEmail">Username</label>
                     <div class="card-input-container UserEmail">
-                        <input type="text" placeholder="Enter your Username" id="Username" name="Username">
+                        <input type="text" placeholder="Enter your Username" id="Username" name="Username" required>
                     </div>
                     <label for="UserEmail">UserEmail</label>
                     <div class="card-input-container UserEmail">
-                        <input type="text" placeholder="Enter your UserEmail" id="UserEmail" name="UserEmail">
+                        <input type="text" placeholder="Enter your UserEmail" id="UserEmail" name="UserEmail" required>
                     </div>
                     <label for="password">Password</label>
                     <div class="card-input-container password">
-                        <input type="password" placeholder="Enter your password" id="password" name="password">
+                        <input type="password" placeholder="Enter your password" id="password" name="password" required>
                     </div>
                     <label for="password">Confirm Password</label>
                     <div class="card-input-container password">
-                        <input type="password" placeholder="Enter your password" id="password1" name="password1">
+                        <input type="password" placeholder="Enter your password" id="password1" name="password1" required>
                     </div>
 
                     <label for="password">Address</label>
                     <div class="card-input-container Address">
-                        <input type="text" placeholder="Enter your Address" id="Address" name="Address">
+                        <input type="text" placeholder="Enter your Address" id="Address" name="Address" required>
                     </div>
 
                     <button class="card-button">Sign UP</button>
