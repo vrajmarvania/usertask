@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Neumorphic Login Page - MG</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-<link rel="stylesheet" href="./style.css">
-<style type="text/css">
+    <meta charset="UTF-8">
+    <title>sing in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./style.css">
+    <style type="text/css">
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
 
 * {
@@ -67,7 +69,8 @@ a {
 }
 
 .card-form label {
-  color: #b6b6b6;
+    color: #000000;
+
 }
 
 .card-input-container input::placeholder {
@@ -86,7 +89,7 @@ a {
 .card-input-container input {
   padding: 1em 2em 1em 4em;
   font-size: 14px;
-  color: #b6b6b6;
+    color: #1b0000;
   background: #f4f4f4;
   box-shadow: -10px -10px 20px rgb(255, 255, 255),
     10px 10px 20px rgba(0, 0, 0, 0.1);
@@ -149,29 +152,33 @@ a {
 .card-input-container.password::after {
   content: "\f023"
 }
-</style>
+
+    </style>
 </head>
+{% load static %}
 <body>
 <!-- partial:index.partial.html -->
 <div class="container">
-  <div class="card">
+    <div class="card">
         <h1 class="card-title">Hello Again!</h1>
+
+        <h1>{{error}}</h1>
         <small class="card-subtitle">Enter your credentials and get access</small>
-        <form class="card-form">
+        <form class="card-form" method="POST" action=""> {% csrf_token %}
             <label for="UserEmail">UserEmail</label>
             <div class="card-input-container UserEmail">
-                <input type="text" placeholder="Enter your UserEmail" id="UserEmail">
+                <input type="text" placeholder="Enter your UserEmail" id="Email" name="Email">
             </div>
             <label for="password">Password</label>
             <div class="card-input-container password">
-                <input type="password" placeholder="Enter your password" id="password">
+                <input type="password" placeholder="Enter your password" id="password" name="password">
             </div>
             <button class="card-button">Sign In</button>
-            <small class="card-forgot-password">New User ? <a>SignUp</a></small>
+            <small class="card-forgot-password">New User ? <a href="{% url 'sing_up' %}">SignUp</a></small>
         </form>
     </div>
 </div>
 <!-- partial -->
-  
+
 </body>
 </html>
